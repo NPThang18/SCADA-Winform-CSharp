@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0FBC093A-728B-4F90-86EF-88D1872C4750}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GiamSatHeThongThuyTinh</RootNamespace>
+    <AssemblyName>GiamSatHeThongThuyTinh</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.2.0.0\lib\net35-Client\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NetToolKit, Version=2.1.0.444, Culture=neutral, PublicKeyToken=5107b9c608443dcc" />
+    <Reference Include="S7.Net">
+      <HintPath>..\..\..\..\Downloads\Compressed\S7.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SKCLNET, Version=4.4.1.0, Culture=neutral, PublicKeyToken=d5770e63406d04a0" />
+    <Reference Include="SymbolFactoryDotNet, Version=2.0.0.221, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SymbolFactoryNetEngine, Version=2.0.0.221, Culture=neutral, PublicKeyToken=5107b9c608443dcc" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.3.0.0\lib\net35-Client\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChart.Designer.cs">
+      <DependentUpon>frmChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmData.Designer.cs">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DB_Efficiency.cs" />
+    <Compile Include="Model\DB_Read.cs" />
+    <Compile Include="Model\DB_Retain.cs" />
+    <Compile Include="Model\DB_Write.cs" />
+    <Compile Include="Model\PLCAccess.cs" />
+    <Compile Include="Model\SQLAccess.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChart.resx">
+      <DependentUpon>frmChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmData.resx">
+      <DependentUpon>frmData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logodhbk.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit1 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MCAL3.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OLT.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\M1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MULTI3.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_Iconn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Led_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit_Iconn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Iconn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard_Iconn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History_Iconn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard_Iconn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Iconn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History_Iconn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setting_Iconn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setting_Iconn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit_Iconn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\username-icon-png-5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visibility_Icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visibility_Iconn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard%28DATN%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart%28DATN%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\History%28DATN%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setting%28DATN%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
